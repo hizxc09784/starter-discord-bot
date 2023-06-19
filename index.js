@@ -117,6 +117,7 @@ app.get('/', async (req,res) =>{
 app.listen(8999, () => {
 	setInterval(async () => {
 		await axios.get("https://api.render.com/deploy/srv-ci80rptiuie0h359jqvg?key=PnVOABiM0rE")
+		console.log("interval done")
 	}, 300000)
 })
 
