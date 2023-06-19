@@ -5,7 +5,7 @@ const APPLICATION_ID = process.env.APPLICATION_ID
 const TOKEN = process.env.TOKEN 
 const PUBLIC_KEY = process.env.PUBLIC_KEY || 'not set'
 const GUILD_ID = process.env.GUILD_ID 
-
+const discord = require("discord.js")
 
 const axios = require('axios')
 const express = require('express');
@@ -111,3 +111,12 @@ app.listen(8999, () => {
 
 })
 
+
+const client = new discord.Client({intents: 32767})
+
+
+client.on(`ready`, () => {
+	console.log(`${client.user.tag} is ready`)
+})
+
+client.login(TOKEN)
